@@ -1,0 +1,4 @@
+<h1 class="text-center fw-bold">ALL TIME TOP RATED:</h1>
+<div class="d-flex overflow-x-scroll m-auto">
+    <app-movie-details *ngFor="let m of movieList" [movie]="m" (movieIdEmitter)="seeDetails($event)"></app-movie-details>
+</div>
