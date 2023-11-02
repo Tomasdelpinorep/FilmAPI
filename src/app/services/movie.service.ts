@@ -11,8 +11,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularMoviesList() :Observable<PopularMoviesResponse>{
-    return this.http.get<PopularMoviesResponse>("https://api.themoviedb.org/3/movie/popular?api_key=0bd26e9f09dfb5078ef2f3aeec479c55");
+  getPopularMoviesList(page:number) :Observable<PopularMoviesResponse>{
+    return this.http.get<PopularMoviesResponse>(`https://api.themoviedb.org/3/movie/popular?page=${page}?api_key=0bd26e9f09dfb5078ef2f3aeec479c55`);
   }
 
   getMovieDetails(id:number):Observable<MovieDetailsResponse>{

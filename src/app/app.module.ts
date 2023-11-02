@@ -9,6 +9,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { TopRatedListComponent } from './components/top-rated-list/top-rated-list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DetailsPageComponent } from './ui/details-page/details-page.component';
+import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomePageComponent,
     MovieDetailsComponent,
     MovieListComponent,
-    TopRatedListComponent
+    TopRatedListComponent,
+    DetailsPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -10,16 +10,20 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MovieListComponent {
   movieList!: PopularMovie[];
   @Output() movieIdEmitter = new EventEmitter<number>();
-
   constructor(private movieService: MovieService) {}
+  currentPage = 1;
 
   ngOnInit(): void {
-    this.movieService.getPopularMoviesList().subscribe((resp) => {
+    this.movieService.getPopularMoviesList(this.currentPage).subscribe((resp) => {
       this.movieList = resp.results;
     });
   }
 
   seeDetails(movieId:number){
     this.movieIdEmitter.emit(movieId);
+  }
+
+  loadNewPage(): void{
+    this.movieService.getPopularMoviesList(this.currentPage).subscribe(resp => {this.movieList = resp.results});
   }
 }
