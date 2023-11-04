@@ -12,10 +12,12 @@ export class MovieListComponent {
   @Output() movieIdEmitter = new EventEmitter<number>();
   constructor(private movieService: MovieService) {}
   currentPage = 1;
+  totalResults!:number;
 
   ngOnInit(): void {
     this.movieService.getPopularMoviesList(this.currentPage).subscribe((resp) => {
       this.movieList = resp.results;
+      this.totalResults = resp.total_results;
     });
   }
 

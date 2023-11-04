@@ -2,18 +2,17 @@
   <h1 class="text-center fw-bold">HOT RIGHT NOW:</h1>
   <div class="container">
     <div class="row col-12">
-      <app-movie-details class="w-auto dropShadow mb-3" *ngFor="let m of movieList" [movie]="m"
-        (movieIdEmitter)="seeDetails($event)"></app-movie-details>
+      <app-movie-details class="w-auto dropShadow mb-3" *ngFor="let m of movieList" [movie]="m"></app-movie-details>
     </div>
   </div>
 
   <nav class="d-flex justify-content-center">
     <ngb-pagination 
-    [collectionSize]="movieList.info.count" 
+    [collectionSize]="totalResults" 
     [pageSize]="20" 
     [maxSize]="3" 
     [rotate]="true" 
-    [(page)]="actualPage" 
+    [(page)]="currentPage" 
     (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination"></ngb-pagination>
 </nav>
 </body>

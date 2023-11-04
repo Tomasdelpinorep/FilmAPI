@@ -1,0 +1,26 @@
+.banner{
+    background-color: #0B2035;
+    width: 100vw;
+    padding: 2%;
+}
+
+p{
+    color: lightgray;
+}
+
+h4{
+    color: white;
+    font-size: 2rem;
+}
+
+h5{
+    color: white;
+}
+
+.mr-2{
+    margin-right: 30px;
+}
+
+.whiteBackground{
+    color: black !important;
+}

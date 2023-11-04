@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { DetailsPageComponent } from './ui/details-page/details-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'list', component: MovieListComponent},
-  { path: 'movie/:id', component: MovieDetailsComponent },
+  { path: 'movie/:id', component: DetailsPageComponent },
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: '**', component: PageNotFoundComponent }
 ];

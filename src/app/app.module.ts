@@ -7,10 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { TopRatedListComponent } from './components/top-rated-list/top-rated-list.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DetailsPageComponent } from './ui/details-page/details-page.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
     HomePageComponent,
     MovieDetailsComponent,
     MovieListComponent,
-    TopRatedListComponent,
     DetailsPageComponent,
     PageNotFoundComponent
   ],
@@ -26,7 +25,15 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
